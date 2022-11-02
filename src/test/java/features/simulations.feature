@@ -21,7 +21,7 @@ Feature: Simulations
     Given I insert a existent CPF with "12" "2000.00" "true" with "POST" verb
     When calls "postSimulationAPI" with "POST" verb
     Then the API Simulation return with status 400
-    And returned the "mensagem"
+    And returned the "mensagem" "POST"
 
   @PutSimulation
   Scenario: modified existent simulation
@@ -40,7 +40,10 @@ Feature: Simulations
 
     @PutWithoutSimulation
     Scenario: try modified a inexistent simulation
-      Given I insert a existent CPF and "modified" simulation with "20" "2000.00" "false" with "PUT" verb
+      Given I insert a CPF without simulation
+      When calls "putSimulationAPI" with "PUT" verb
+      Then the API Simulation return with status 404
+      And returned the "mensagem" "PUT"
 
 
 

@@ -92,10 +92,15 @@ public class SimulationsSteps extends Utils {
                 .body(duplicatedCPF);
     }
 
-    @And("returned the {string}")
-    public void returnedThe(String message) {
-        response.then()
-                .body("mensagem",Matchers.equalTo("CPF duplicado"));
+    @And("returned the {string} {string}")
+    public void returnedThe(String message, String http) {
+        if(http.equalsIgnoreCase("POST")) {
+            response.then()
+                    .body("mensagem",Matchers.equalTo("CPF duplicado"));
+        } else if(http.equalsIgnoreCase("PUT")) {
+            response.then()
+                    .body("mensagem",Matchers.equalTo("CPF " + duplicatedCPF.getCpf() +" não encontrado"));
+        }
     }
 
     @And("returned the modified simulation")
@@ -120,11 +125,22 @@ public class SimulationsSteps extends Utils {
         } else if(action.equalsIgnoreCase("modified")) {
             duplicatedCPF.setNome(generateFakerName());
             duplicatedCPF.setParcelas(Integer.valueOf(instalments));
+
+        } else if(action.equalsIgnoreCase("without")) {
+            duplicatedCPF.setCpf(generateValidCPF());
         } else {
             duplicatedCPF.setNome(generateFakerName());
         }
         res = given()
                 .spec(requestSpecification(http))
+                .body(duplicatedCPF);
+    }
+
+    @Given("I insert a CPF without simulation")
+    public void iInsertACPFWithoutSimulation() throws IOException {
+        duplicatedCPF = TestDataBuild.addSimulation(200.00,12,false);
+        res = given()
+                .spec(requestSpecification("PUT"))
                 .body(duplicatedCPF);
     }
 }

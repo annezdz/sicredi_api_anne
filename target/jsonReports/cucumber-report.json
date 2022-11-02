@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2022-11-02T18:52:36.590Z",
+        "start_timestamp": "2022-11-02T21:40:48.870Z",
         "line": 4,
         "name": "add a new simulation successfully",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 335988500,
+              "duration": 1004571600,
               "status": "passed"
             },
             "line": 5,
@@ -43,7 +43,7 @@
           },
           {
             "result": {
-              "duration": 231883300,
+              "duration": 527673200,
               "status": "passed"
             },
             "line": 6,
@@ -65,7 +65,7 @@
           },
           {
             "result": {
-              "duration": 103500,
+              "duration": 997200,
               "status": "passed"
             },
             "line": 7,
@@ -83,7 +83,7 @@
           },
           {
             "result": {
-              "duration": 214860900,
+              "duration": 322152200,
               "status": "passed"
             },
             "line": 8,
