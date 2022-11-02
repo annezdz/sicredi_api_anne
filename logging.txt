@@ -1,5 +1,5 @@
 Request method:	GET
-Request URI:	http://localhost:8080/api/v1/restricoes/97093236014
+Request URI:	http://localhost:8080/api/v1/restricoes/88830540080
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -10,11 +10,5 @@ Headers:		Accept=*/*
 Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
-HTTP/1.1 200 
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Wed, 02 Nov 2022 05:05:06 GMT
-
-{
-    "mensagem": "O CPF 97093236014 tem problema"
-}
+HTTP/1.1 204 
+Date: Wed, 02 Nov 2022 05:25:54 GMT

@@ -25,10 +25,11 @@ public class RestrictionsSteps extends Utils {
 
     @Given("a {string} to be checked with {string} http request")
     public void i_check_a(String cpf, String http) throws IOException {
-        if(!cpf.matches("###########")) {
+        if(!cpf.matches("\\d{11}")) {
             cpfWithoutRestriction = generateValidCPF();
+        } else {
+            cpfWithoutRestriction = cpf;
         }
-        cpfWithoutRestriction= cpf;
         System.out.println(cpfWithoutRestriction);
         res = given()
                 .spec(requestSpecification(http));
