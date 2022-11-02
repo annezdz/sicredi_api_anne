@@ -1,1 +1,6 @@
+steps\RestrictionsSteps.class
+resources\APIResources.class
 org\example\AppTest.class
+runners\TestRunner.class
+resources\TestDataBuild.class
+resources\Utils.class

@@ -9,6 +9,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import org.junit.Assert;
 import resources.APIResources;
 import resources.Utils;
 
@@ -51,9 +52,9 @@ public class RestrictionsSteps extends Utils {
         }
     }
 
-    @Then("the API call got success with status {string}")
-    public void the_API_call_got_success_with_status(String string) {
-
+    @Then("the API call got success with status {int}")
+    public void the_API_call_got_success_with_status(int statusCode) {
+        Assert.assertEquals(response.getStatusCode(),statusCode);
     }
 
 
@@ -63,8 +64,10 @@ public class RestrictionsSteps extends Utils {
     }
 
 
-    @And("message in response body is {string}")
-    public void messageInResponseBodyIs(String arg0) {
+    @And("{string} in response body is {string}")
+    public void messageInResponseBodyIs(String key, String expectedMessage) {
+        Assert.assertEquals(getJsonPath(response,key), expectedMessage);
+
     }
 
 }
