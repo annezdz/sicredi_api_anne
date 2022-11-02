@@ -3,1011 +3,109 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2022-11-02T14:57:13.787Z",
-        "line": 19,
-        "name": "o: Check CPF with restriction",
+        "start_timestamp": "2022-11-02T18:52:36.590Z",
+        "line": 4,
+        "name": "add a new simulation successfully",
         "description": "",
-        "id": "check-restrictions-by-cpf;o:-check-cpf-with-restriction;;2",
+        "id": "simulations;add-a-new-simulation-successfully",
         "type": "scenario",
-        "keyword": "Scenario Outline",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 441866300,
+              "duration": 335988500,
               "status": "passed"
             },
-            "line": 13,
-            "name": "a \"97093236014\" to be checked with \"getRestrictionAPI\" http request",
+            "line": 5,
+            "name": "I create a new simulation with \"10\" \"1000.00\" \"true\" with \"POST\" verb",
             "match": {
               "arguments": [
                 {
-                  "val": "\"97093236014\"",
-                  "offset": 2
+                  "val": "\"10\"",
+                  "offset": 31
                 },
                 {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 35
+                  "val": "\"1000.00\"",
+                  "offset": 36
+                },
+                {
+                  "val": "\"true\"",
+                  "offset": 46
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 58
                 }
               ],
-              "location": "RestrictionsSteps.i_check_a(String,String)"
+              "location": "SimulationsSteps.iCreateANewSimulationWith(String,String,String,String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 537075500,
+              "duration": 231883300,
               "status": "passed"
             },
-            "line": 14,
-            "name": "calls \"getRestrictionAPI\" with \"GET\" http request",
+            "line": 6,
+            "name": "calls \"postSimulationAPI\" with \"POST\" verb",
             "match": {
               "arguments": [
                 {
-                  "val": "\"getRestrictionAPI\"",
+                  "val": "\"postSimulationAPI\"",
                   "offset": 6
                 },
                 {
-                  "val": "\"GET\"",
+                  "val": "\"POST\"",
                   "offset": 31
                 }
               ],
-              "location": "RestrictionsSteps.calls_with_http_request(String,String)"
+              "location": "SimulationsSteps.callsWithVerb(String,String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 1012600,
+              "duration": 103500,
               "status": "passed"
             },
-            "line": 15,
-            "name": "the API call got success with status 200",
+            "line": 7,
+            "name": "the API Simulation return with status 201",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
-                  "offset": 37
+                  "val": "201",
+                  "offset": 38
                 }
               ],
-              "location": "RestrictionsSteps.the_API_call_got_success_with_status(int)"
+              "location": "SimulationsSteps.theAPISimulationCallGotSuccessWithStatus(int)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 192583600,
+              "duration": 214860900,
               "status": "passed"
             },
-            "line": 16,
-            "name": "\"mensagem\" in response body is \"O CPF 97093236014 tem problema\"",
+            "line": 8,
+            "name": "returned the new simulation",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"mensagem\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"O CPF 97093236014 tem problema\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.messageInResponseBodyIs(String,String)"
+              "location": "SimulationsSteps.returnedTheNewSimulation()"
             },
             "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@WithRestriction"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2022-11-02T14:57:14.979Z",
-        "line": 20,
-        "name": "o: Check CPF with restriction",
-        "description": "",
-        "id": "check-restrictions-by-cpf;o:-check-cpf-with-restriction;;3",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 983100,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "a \"60094146012\" to be checked with \"getRestrictionAPI\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"60094146012\"",
-                  "offset": 2
-                },
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 35
-                }
-              ],
-              "location": "RestrictionsSteps.i_check_a(String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 16565200,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "calls \"getRestrictionAPI\" with \"GET\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 6
-                },
-                {
-                  "val": "\"GET\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.calls_with_http_request(String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 45400,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "the API call got success with status 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 37
-                }
-              ],
-              "location": "RestrictionsSteps.the_API_call_got_success_with_status(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 6487100,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "\"mensagem\" in response body is \"O CPF 60094146012 tem problema\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"mensagem\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"O CPF 60094146012 tem problema\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.messageInResponseBodyIs(String,String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@WithRestriction"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2022-11-02T14:57:15.003Z",
-        "line": 21,
-        "name": "o: Check CPF with restriction",
-        "description": "",
-        "id": "check-restrictions-by-cpf;o:-check-cpf-with-restriction;;4",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 1190100,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "a \"84809766080\" to be checked with \"getRestrictionAPI\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"84809766080\"",
-                  "offset": 2
-                },
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 35
-                }
-              ],
-              "location": "RestrictionsSteps.i_check_a(String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 17249900,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "calls \"getRestrictionAPI\" with \"GET\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 6
-                },
-                {
-                  "val": "\"GET\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.calls_with_http_request(String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 43100,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "the API call got success with status 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 37
-                }
-              ],
-              "location": "RestrictionsSteps.the_API_call_got_success_with_status(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5842800,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "\"mensagem\" in response body is \"O CPF 84809766080 tem problema\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"mensagem\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"O CPF 84809766080 tem problema\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.messageInResponseBodyIs(String,String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@WithRestriction"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2022-11-02T14:57:15.028Z",
-        "line": 22,
-        "name": "o: Check CPF with restriction",
-        "description": "",
-        "id": "check-restrictions-by-cpf;o:-check-cpf-with-restriction;;5",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 1146400,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "a \"62648716050\" to be checked with \"getRestrictionAPI\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"62648716050\"",
-                  "offset": 2
-                },
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 35
-                }
-              ],
-              "location": "RestrictionsSteps.i_check_a(String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 12547300,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "calls \"getRestrictionAPI\" with \"GET\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 6
-                },
-                {
-                  "val": "\"GET\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.calls_with_http_request(String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 41100,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "the API call got success with status 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 37
-                }
-              ],
-              "location": "RestrictionsSteps.the_API_call_got_success_with_status(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 6036200,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "\"mensagem\" in response body is \"O CPF 62648716050 tem problema\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"mensagem\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"O CPF 62648716050 tem problema\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.messageInResponseBodyIs(String,String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@WithRestriction"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2022-11-02T14:57:15.049Z",
-        "line": 23,
-        "name": "o: Check CPF with restriction",
-        "description": "",
-        "id": "check-restrictions-by-cpf;o:-check-cpf-with-restriction;;6",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 776000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "a \"26276298085\" to be checked with \"getRestrictionAPI\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"26276298085\"",
-                  "offset": 2
-                },
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 35
-                }
-              ],
-              "location": "RestrictionsSteps.i_check_a(String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 12794800,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "calls \"getRestrictionAPI\" with \"GET\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 6
-                },
-                {
-                  "val": "\"GET\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.calls_with_http_request(String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 46600,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "the API call got success with status 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 37
-                }
-              ],
-              "location": "RestrictionsSteps.the_API_call_got_success_with_status(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5859500,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "\"mensagem\" in response body is \"O CPF 26276298085 tem problema\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"mensagem\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"O CPF 26276298085 tem problema\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.messageInResponseBodyIs(String,String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@WithRestriction"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2022-11-02T14:57:15.069Z",
-        "line": 24,
-        "name": "o: Check CPF with restriction",
-        "description": "",
-        "id": "check-restrictions-by-cpf;o:-check-cpf-with-restriction;;7",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 1084000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "a \"01317496094\" to be checked with \"getRestrictionAPI\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"01317496094\"",
-                  "offset": 2
-                },
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 35
-                }
-              ],
-              "location": "RestrictionsSteps.i_check_a(String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 11679800,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "calls \"getRestrictionAPI\" with \"GET\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 6
-                },
-                {
-                  "val": "\"GET\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.calls_with_http_request(String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 38100,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "the API call got success with status 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 37
-                }
-              ],
-              "location": "RestrictionsSteps.the_API_call_got_success_with_status(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5272500,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "\"mensagem\" in response body is \"O CPF 01317496094 tem problema\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"mensagem\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"O CPF 01317496094 tem problema\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.messageInResponseBodyIs(String,String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@WithRestriction"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2022-11-02T14:57:15.087Z",
-        "line": 25,
-        "name": "o: Check CPF with restriction",
-        "description": "",
-        "id": "check-restrictions-by-cpf;o:-check-cpf-with-restriction;;8",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 724100,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "a \"55856777050\" to be checked with \"getRestrictionAPI\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"55856777050\"",
-                  "offset": 2
-                },
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 35
-                }
-              ],
-              "location": "RestrictionsSteps.i_check_a(String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 9274000,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "calls \"getRestrictionAPI\" with \"GET\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 6
-                },
-                {
-                  "val": "\"GET\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.calls_with_http_request(String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 55500,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "the API call got success with status 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 37
-                }
-              ],
-              "location": "RestrictionsSteps.the_API_call_got_success_with_status(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5066900,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "\"mensagem\" in response body is \"O CPF 55856777050 tem problema\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"mensagem\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"O CPF 55856777050 tem problema\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.messageInResponseBodyIs(String,String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@WithRestriction"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2022-11-02T14:57:15.103Z",
-        "line": 26,
-        "name": "o: Check CPF with restriction",
-        "description": "",
-        "id": "check-restrictions-by-cpf;o:-check-cpf-with-restriction;;9",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 1397500,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "a \"19626829001\" to be checked with \"getRestrictionAPI\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"19626829001\"",
-                  "offset": 2
-                },
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 35
-                }
-              ],
-              "location": "RestrictionsSteps.i_check_a(String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 14461100,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "calls \"getRestrictionAPI\" with \"GET\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 6
-                },
-                {
-                  "val": "\"GET\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.calls_with_http_request(String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 40600,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "the API call got success with status 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 37
-                }
-              ],
-              "location": "RestrictionsSteps.the_API_call_got_success_with_status(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5560400,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "\"mensagem\" in response body is \"O CPF 19626829001 tem problema\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"mensagem\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"O CPF 19626829001 tem problema\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.messageInResponseBodyIs(String,String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@WithRestriction"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2022-11-02T14:57:15.125Z",
-        "line": 27,
-        "name": "o: Check CPF with restriction",
-        "description": "",
-        "id": "check-restrictions-by-cpf;o:-check-cpf-with-restriction;;10",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 787900,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "a \"24094592008\" to be checked with \"getRestrictionAPI\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"24094592008\"",
-                  "offset": 2
-                },
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 35
-                }
-              ],
-              "location": "RestrictionsSteps.i_check_a(String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 9728500,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "calls \"getRestrictionAPI\" with \"GET\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 6
-                },
-                {
-                  "val": "\"GET\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.calls_with_http_request(String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 37400,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "the API call got success with status 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 37
-                }
-              ],
-              "location": "RestrictionsSteps.the_API_call_got_success_with_status(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 22869900,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "\"mensagem\" in response body is \"O CPF 24094592008 tem problema\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"mensagem\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"O CPF 24094592008 tem problema\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.messageInResponseBodyIs(String,String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@WithRestriction"
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2022-11-02T14:57:15.159Z",
-        "line": 28,
-        "name": "o: Check CPF with restriction",
-        "description": "",
-        "id": "check-restrictions-by-cpf;o:-check-cpf-with-restriction;;11",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 679700,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "a \"58063164083\" to be checked with \"getRestrictionAPI\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"58063164083\"",
-                  "offset": 2
-                },
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 35
-                }
-              ],
-              "location": "RestrictionsSteps.i_check_a(String,String)"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 9931700,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "calls \"getRestrictionAPI\" with \"GET\" http request",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"getRestrictionAPI\"",
-                  "offset": 6
-                },
-                {
-                  "val": "\"GET\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.calls_with_http_request(String,String)"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 39400,
-              "status": "passed"
-            },
-            "line": 15,
-            "name": "the API call got success with status 200",
-            "match": {
-              "arguments": [
-                {
-                  "val": "200",
-                  "offset": 37
-                }
-              ],
-              "location": "RestrictionsSteps.the_API_call_got_success_with_status(int)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 8313900,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "\"mensagem\" in response body is \"O CPF 58063164083 tem problema\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"mensagem\"",
-                  "offset": 0
-                },
-                {
-                  "val": "\"O CPF 58063164083 tem problema\"",
-                  "offset": 31
-                }
-              ],
-              "location": "RestrictionsSteps.messageInResponseBodyIs(String,String)"
-            },
-            "keyword": "And "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@WithRestriction"
+            "name": "@AddSimulationSuccessful"
           }
         ]
       }
     ],
-    "name": "Check restrictions by CPF",
+    "name": "Simulations",
     "description": "",
-    "id": "check-restrictions-by-cpf",
+    "id": "simulations",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/cpfValidations.feature",
+    "uri": "file:src/test/java/features/simulations.feature",
     "tags": []
   }
 ]

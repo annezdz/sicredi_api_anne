@@ -9,11 +9,11 @@ public class TestDataBuild extends Utils{
     public static Simulation addSimulation(double value, int instalments, boolean hasRestriction) {
         Simulation simulation = new Simulation();
         simulation.setCpf(generateValidCPF());
-        simulation.setName(String.valueOf(faker.name().fullName()));
+        simulation.setNome(String.valueOf(faker.name().fullName()));
         simulation.setEmail(faker.internet().emailAddress());
-        simulation.setValue(value);
-        simulation.setInstalments(instalments);
-        simulation.setInsurance(false);
+        simulation.setValor(value);
+        simulation.setParcelas(instalments);
+        simulation.setSeguro(hasRestriction);
         return simulation;
     }
 
@@ -22,9 +22,9 @@ public class TestDataBuild extends Utils{
         Simulation simulation = testDataBuild.addSimulation(1000D, 3, false);
         System.out.println(simulation.getCpf());
         System.out.println(simulation.getEmail());
-        System.out.println(simulation.getInstalments());
-        System.out.println(simulation.getName());
-        System.out.println(simulation.getValue());
-        System.out.println(simulation.isInsurance());
+        System.out.println(simulation.getParcelas());
+        System.out.println(simulation.getNome());
+        System.out.println(simulation.getValor());
+        System.out.println(simulation.isSeguro());
     }
 }

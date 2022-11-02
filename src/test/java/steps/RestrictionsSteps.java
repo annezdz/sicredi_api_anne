@@ -23,6 +23,7 @@ public class RestrictionsSteps extends Utils {
     protected ResponseSpecification resspec;
     public static String cpfWithoutRestriction;
     protected Response response;
+    protected  int statusCodeReturned;
 
     @Given("a {string} to be checked with {string} http request")
     public void i_check_a(String cpf, String http) throws IOException {

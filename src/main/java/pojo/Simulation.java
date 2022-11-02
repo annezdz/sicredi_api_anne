@@ -1,15 +1,13 @@
 package pojo;
 
-import java.util.List;
-
 public class Simulation {
 
     private String cpf;
-    private String name;
+    private String nome;
     private String email;
-    private double value;
-    private int instalments;
-    private boolean insurance;
+    private double valor;
+    private int parcelas;
+    private boolean seguro;
 
 
     public String getCpf() {
@@ -20,12 +18,12 @@ public class Simulation {
         this.cpf = cpf;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -36,27 +34,27 @@ public class Simulation {
         this.email = email;
     }
 
-    public double getValue() {
-        return value;
+    public double getValor() {
+        return valor;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
-    public int getInstalments() {
-        return instalments;
+    public int getParcelas() {
+        return parcelas;
     }
 
-    public void setInstalments(int instalments) {
-        this.instalments = instalments;
+    public void setParcelas(int parcelas) {
+        this.parcelas = parcelas;
     }
 
-    public boolean isInsurance() {
-        return insurance;
+    public boolean isSeguro() {
+        return seguro;
     }
 
-    public void setInsurance(boolean insurance) {
-        this.insurance = insurance;
+    public void setSeguro(boolean seguro) {
+        this.seguro = seguro;
     }
 }

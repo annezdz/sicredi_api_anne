@@ -1,6 +1,8 @@
 steps\RestrictionsSteps.class
 resources\APIResources.class
+runners\TestRunnerSimulations.class
+steps\SimulationsSteps.class
 org\example\AppTest.class
-runners\TestRunner.class
 resources\TestDataBuild.class
 resources\Utils.class
+runners\TestRunnerRestrictions.class
