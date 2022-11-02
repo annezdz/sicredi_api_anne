@@ -7,7 +7,6 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import steps.RestrictionsSteps;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -25,10 +24,10 @@ public abstract class Utils {
             PrintStream log =new PrintStream(new FileOutputStream("logging.txt"));
             APIResources resourceAPI = APIResources.valueOf(resource);
             req = new RequestSpecBuilder().setBaseUri(getGlobalValue("baseUrl"))
-                    .setBasePath(RestrictionsSteps.cpfWithoutRestriction)
                     .addFilter(RequestLoggingFilter.logRequestTo(log))
                     .addFilter(ResponseLoggingFilter.logResponseTo(log))
-                    .setContentType(ContentType.JSON).build();
+                    .setContentType(ContentType.JSON)
+                    .build();
             return req;
         }
         return req;

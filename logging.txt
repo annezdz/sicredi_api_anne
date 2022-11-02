@@ -1,5 +1,5 @@
 Request method:	GET
-Request URI:	http://localhost:8090/api/v1/restricoes/
+Request URI:	http://localhost:8080/api/v1/restricoes/97093236014
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -7,18 +7,14 @@ Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
 				Content-Type=application/json; charset=UTF-8
-Cookies:		JSESSIONID=97093236014
+Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
-HTTP/1.1 404 
+HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Wed, 02 Nov 2022 03:07:37 GMT
+Date: Wed, 02 Nov 2022 05:05:06 GMT
 
 {
-    "timestamp": "2022-11-02T03:07:37.225+0000",
-    "status": 404,
-    "error": "Not Found",
-    "message": "No message available",
-    "path": "/api/v1/restricoes/"
+    "mensagem": "O CPF 97093236014 tem problema"
 }

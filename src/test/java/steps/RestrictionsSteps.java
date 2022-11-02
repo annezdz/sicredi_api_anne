@@ -46,7 +46,7 @@ public class RestrictionsSteps extends Utils {
 
         if(method.equalsIgnoreCase("GET")) {
             response = res.when()
-                    .get(resourceAPI.getResource());
+                    .get(resourceAPI.getResource() + cpfWithoutRestriction);
         }
     }
 
