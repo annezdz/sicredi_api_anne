@@ -1,0 +1,24 @@
+Request method:	GET
+Request URI:	http://localhost:8090/api/v1/restricoes/
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		JSESSIONID=97093236014
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 404 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 03:07:37 GMT
+
+{
+    "timestamp": "2022-11-02T03:07:37.225+0000",
+    "status": 404,
+    "error": "Not Found",
+    "message": "No message available",
+    "path": "/api/v1/restricoes/"
+}
