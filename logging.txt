@@ -1,5 +1,5 @@
 Request method:	GET
-Request URI:	http://localhost:8080/api/v1/restricoes/88830540080
+Request URI:	http://localhost:8080/api/v1/restricoes/97093236014
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -10,5 +10,257 @@ Headers:		Accept=*/*
 Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
-HTTP/1.1 204 
-Date: Wed, 02 Nov 2022 05:25:54 GMT
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+
+{
+    "mensagem": "O CPF 97093236014 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/60094146012
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+
+{
+    "mensagem": "O CPF 60094146012 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/84809766080
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+
+{
+    "mensagem": "O CPF 84809766080 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/62648716050
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+
+{
+    "mensagem": "O CPF 62648716050 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/26276298085
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+
+{
+    "mensagem": "O CPF 26276298085 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/01317496094
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+
+{
+    "mensagem": "O CPF 01317496094 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/55856777050
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+
+{
+    "mensagem": "O CPF 55856777050 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/19626829001
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+
+{
+    "mensagem": "O CPF 19626829001 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/24094592008
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+
+{
+    "mensagem": "O CPF 24094592008 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/58063164083
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+
+{
+    "mensagem": "O CPF 58063164083 tem problema"
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "21401557260",
+    "nome": "Miss Tracy Huel",
+    "email": "bianca.volkman@gmail.com",
+    "valor": 1000.0,
+    "parcelas": 11,
+    "seguro": true
+}
+HTTP/1.1 201 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+
+{
+    "id": 138,
+    "nome": "Miss Tracy Huel",
+    "cpf": "21401557260",
+    "email": "bianca.volkman@gmail.com",
+    "valor": 1000.0,
+    "parcelas": 11,
+    "seguro": true
+}
+Request method:	PUT
+Request URI:	http://localhost:8080/api/v1/simulacoes/21401557260
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "21401557260",
+    "nome": "Miss Tracy Huel",
+    "email": "emailErradoTeste",
+    "valor": 1000.0,
+    "parcelas": 1,
+    "seguro": true
+}
+HTTP/1.1 400 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 02 Nov 2022 20:53:17 GMT
+Connection: close
+
+{
+    "erros": {
+        "parcelas": "Parcelas deve ser igual ou maior que 2",
+        "email": "must be a well-formed email address"
+    }
+}

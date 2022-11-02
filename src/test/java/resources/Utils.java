@@ -1,5 +1,6 @@
 package resources;
 
+import com.github.javafaker.Faker;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -61,14 +62,10 @@ public abstract class Utils {
         return generateDigits(sbCpfNumber.toString());
     }
 
-//    public boolean validateCPF(String cpf){
-//        if(cpf.length() == 11){
-//            if(cpf.equals(generateDigits(cpf.substring(0, 9)))){
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
+    public static String generateFakerName() {
+        Faker faker = new Faker();
+        return faker.name().fullName();
+    }
 
     private static String generateDigits(String digitsBase) {
         StringBuilder sbCpfNumber = new StringBuilder(digitsBase);

@@ -32,7 +32,6 @@ public class RestrictionsSteps extends Utils {
         } else {
             cpfWithoutRestriction = cpf;
         }
-        System.out.println(cpfWithoutRestriction);
         res = given()
                 .spec(requestSpecification(http));
     }
@@ -40,8 +39,6 @@ public class RestrictionsSteps extends Utils {
     @When("calls {string} with {string} http request")
     public void calls_with_http_request(String resource, String method) {
         APIResources resourceAPI = APIResources.valueOf(resource);
-        System.out.println(resourceAPI.getResource() + cpfWithoutRestriction);
-
         resspec = new ResponseSpecBuilder()
                 .expectStatusCode(204)
                 .expectContentType(ContentType.JSON)

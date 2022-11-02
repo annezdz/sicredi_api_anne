@@ -29,14 +29,17 @@ public class SimulationsSteps extends Utils {
     protected ResponseSpecification resspec;
     protected Response response;
 
+    static Simulation duplicatedCPF;
+
 //    static TestDataBuild teste ;
 
     protected static int statusCodeReturned;
     @Given("I create a new simulation with {string} {string} {string} with {string} verb")
     public void iCreateANewSimulationWith(String instalments, String value, String insurance, String http)  throws IOException {
+       duplicatedCPF = TestDataBuild.addSimulation(Double.parseDouble(value),Integer.parseInt(instalments),Boolean.parseBoolean(insurance));
         res = given()
                 .spec(requestSpecification(http))
-                .body(TestDataBuild.addSimulation(Double.parseDouble(value),Integer.parseInt(instalments),Boolean.parseBoolean(insurance)));
+                .body(duplicatedCPF);
     }
 
     @And("returned the new simulation")
@@ -52,8 +55,6 @@ public class SimulationsSteps extends Utils {
     public void callsWithVerb(String resource, String http) {
         APIResources resourceAPI = APIResources.valueOf(resource);
 
-//        System.out.println(resourceAPI.getResource());
-
         resspec = new ResponseSpecBuilder()
                 .expectStatusCode(201)
                 .expectContentType(ContentType.JSON)
@@ -62,6 +63,10 @@ public class SimulationsSteps extends Utils {
         if(http.equalsIgnoreCase("POST")) {
             response = res.when()
                     .post(resourceAPI.getResource());
+            statusCodeReturned = response.getStatusCode();
+        } else if(http.equalsIgnoreCase("PUT")) {
+            response = res.when()
+                    .put(resourceAPI.getResource() + duplicatedCPF.getCpf());
             statusCodeReturned = response.getStatusCode();
         }
     }
@@ -80,7 +85,7 @@ public class SimulationsSteps extends Utils {
     @Given("I insert a existent CPF with {string} {string} {string} with {string} verb")
     public void iInsertAExistentCPFWithWithVerb(String instalments, String value, String insurance, String http) throws IOException {
 
-        Simulation duplicatedCPF = TestDataBuild.addSimulation(Double.parseDouble(value),Integer.parseInt(instalments),Boolean.parseBoolean(insurance));
+        duplicatedCPF = TestDataBuild.addSimulation(Double.parseDouble(value),Integer.parseInt(instalments),Boolean.parseBoolean(insurance));
         duplicatedCPF.setCpf("97093236014");
         res = given()
                 .spec(requestSpecification(http))
@@ -92,4 +97,35 @@ public class SimulationsSteps extends Utils {
         response.then()
                 .body("mensagem",Matchers.equalTo("CPF duplicado"));
     }
+
+    @And("returned the modified simulation")
+    public void returnedTheModifiedSimulation() {
+        Assert.assertFalse(getBody(response).isEmpty());
+        response
+                .then()
+                .assertThat()
+                .body(JsonSchemaValidator.matchesJsonSchema(new File("src/test/java/resources/schema.json")));
+    }
+
+    @Given("I insert a CPF and {string} simulation with {string} {string} {string} with {string} verb")
+    public void iInsertAExistentCPFAndModifiedSimulationWithWithVerb(String action, String instalments, String value, String insurance, String http) throws IOException {
+        if(duplicatedCPF.getCpf() == null) {
+            duplicatedCPF = TestDataBuild.addSimulation(Double.parseDouble(value),Integer.parseInt(instalments),Boolean.parseBoolean(insurance));
+            duplicatedCPF.setCpf("97093236014");
+
+        } else  if(action.equalsIgnoreCase("modified with error")){
+            duplicatedCPF.setParcelas(Integer.valueOf(instalments));
+
+            duplicatedCPF.setEmail("emailErradoTeste");
+        } else if(action.equalsIgnoreCase("modified")) {
+            duplicatedCPF.setNome(generateFakerName());
+            duplicatedCPF.setParcelas(Integer.valueOf(instalments));
+        } else {
+            duplicatedCPF.setNome(generateFakerName());
+        }
+        res = given()
+                .spec(requestSpecification(http))
+                .body(duplicatedCPF);
+    }
 }
+

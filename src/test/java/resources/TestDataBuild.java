@@ -16,15 +16,4 @@ public class TestDataBuild extends Utils{
         simulation.setSeguro(hasRestriction);
         return simulation;
     }
-
-    public static void main(String[] args) {
-        TestDataBuild testDataBuild = new TestDataBuild();
-        Simulation simulation = testDataBuild.addSimulation(1000D, 3, false);
-        System.out.println(simulation.getCpf());
-        System.out.println(simulation.getEmail());
-        System.out.println(simulation.getParcelas());
-        System.out.println(simulation.getNome());
-        System.out.println(simulation.getValor());
-        System.out.println(simulation.isSeguro());
-    }
 }
