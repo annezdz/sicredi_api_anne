@@ -3,21 +3,21 @@ package pojo;
 import java.util.List;
 
 public class Simulation {
-    
-    private Restriction hasRestriction;
+
+    private String cpf;
     private String name;
     private String email;
     private double value;
     private int instalments;
     private boolean insurance;
-    private List<String> errors;
 
-    public Restriction getHasRestriction() {
-        return hasRestriction;
+
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setHasRestriction(Restriction hasRestriction) {
-        this.hasRestriction = hasRestriction;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getName() {
@@ -58,13 +58,5 @@ public class Simulation {
 
     public void setInsurance(boolean insurance) {
         this.insurance = insurance;
-    }
-
-    public List<String> getErrors() {
-        return errors;
-    }
-
-    public void setErrors(List<String> errors) {
-        this.errors = errors;
     }
 }
