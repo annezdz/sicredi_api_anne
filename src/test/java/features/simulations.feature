@@ -63,5 +63,24 @@ Feature: Simulations
     Then the API Simulation return with status 200
     And validate Schema
 
+  @TryGetCPFByIDWithoutSimulation
+  Scenario: Try get a simulation by CPF
+    Given I search a CPF without simulation
+    When calls "getSimulationAPI" with "GET BY CPF"
+    Then the API Simulation return with status 404
+    And returned the "mensagem" "GET"
+
+  @DeleteSimulationSuccessful
+  Scenario: Delete a simulation successful
+    Given I search a CPF
+    When calls "getSimulationAPI" with "GET BY CPF"
+    And get id simulation
+    When calls "deleteSimulationAPI" with "DELETE"
+    Then the API Simulation return with status 204
+
+    @TryDeleteSimulation
+    Scenario: Try delete a simulation successful
+      When calls "deleteSimulationAPI" with "TRY DELETE"
+      Then the API Simulation return with status 404
 
 

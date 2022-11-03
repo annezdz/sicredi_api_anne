@@ -36,6 +36,7 @@ public class SimulationsSteps extends Utils {
     protected ResponseSpecification resspec;
     protected Response response;
 
+    protected static Integer id;
     static Simulation duplicatedCPF;
 
     protected static int statusCodeReturned;
@@ -101,7 +102,7 @@ public class SimulationsSteps extends Utils {
         if(http.equalsIgnoreCase("POST")) {
             response.then()
                     .body("mensagem",Matchers.equalTo("CPF duplicado"));
-        } else if(http.equalsIgnoreCase("PUT")) {
+        } else if(http.equalsIgnoreCase("PUT") || http.equalsIgnoreCase("GET")) {
             response.then()
                     .body("mensagem",Matchers.equalTo("CPF " + duplicatedCPF.getCpf() +" não encontrado"));
         }
@@ -181,7 +182,6 @@ public class SimulationsSteps extends Utils {
 
     @When("calls {string} with {string}")
     public void callsWith(String resource, String verb) throws IOException {
-
         res = given()
                 .spec(requestSpecification(resource));
         APIResources resourceAPI = APIResources.valueOf(resource);
@@ -193,6 +193,12 @@ public class SimulationsSteps extends Utils {
         if (verb.equalsIgnoreCase("GET BY CPF")) {
             response = res.when()
                     .get(resourceAPI.getResource() + duplicatedCPF.getCpf());
+        } else if(verb.equalsIgnoreCase("DELETE")) {
+            response = res.when()
+                    .delete(resourceAPI.getResource() + id);
+        } else if (verb.equalsIgnoreCase("TRY DELETE")){
+            response = res.when()
+                    .delete(resourceAPI.getResource() + 999);
         }
     }
 
@@ -201,7 +207,7 @@ public class SimulationsSteps extends Utils {
         List<String> list = Collections.singletonList(response.asString());
         List<Map<String, String>> simulations = JsonPath.from(response.asString()).get();
         Assert.assertTrue(simulations.size() == 0);
-        Assert.assertEquals(response.getStatusCode(), status);
+        Assert.assertEquals(status, response.getStatusCode());
     }
 
     @Then("search all simulations")
@@ -227,6 +233,27 @@ public class SimulationsSteps extends Utils {
                 .then()
                 .assertThat()
                 .body(JsonSchemaValidator.matchesJsonSchema(new File("src/test/java/resources/schema.json")));
+    }
+
+    @Given("I search a CPF without simulation")
+    public void iSearchACPFWithoutSimulation() {
+        if(duplicatedCPF.getCpf() !=  null) {
+            duplicatedCPF.setCpf("58063164083");
+
+        }
+    }
+
+    @And("get id simulation")
+    public void getIdSimulation() {
+        try {
+            id = response.then().contentType(ContentType.JSON).extract().path("id");
+        } catch (RuntimeException exception) {
+            System.out.println("Simulacao nao encontrada");
+        }
+    }
+
+    @When("try delete an simulation")
+    public void tryDeleteAnSimulation() {
     }
 }
 
