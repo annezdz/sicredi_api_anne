@@ -1,3 +1,196 @@
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "01452787603",
+    "nome": "Valrie Bernier",
+    "email": "rory.sawayn@hotmail.com",
+    "valor": 1000.0,
+    "parcelas": 10,
+    "seguro": true
+}
+HTTP/1.1 201 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+{
+    "id": 53,
+    "nome": "Valrie Bernier",
+    "cpf": "01452787603",
+    "email": "rory.sawayn@hotmail.com",
+    "valor": 1000.0,
+    "parcelas": 10,
+    "seguro": true
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "55148357231",
+    "nome": "Clarissa Harber",
+    "email": "andrea.stoltenberg@hotmail.com",
+    "valor": 1000.0,
+    "parcelas": 1,
+    "seguro": false
+}
+HTTP/1.1 400 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+Connection: close
+
+{
+    "erros": {
+        "parcelas": "Parcelas deve ser igual ou maior que 2"
+    }
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "97093236014",
+    "nome": "Stephanie Kunze",
+    "email": "nick.koch@hotmail.com",
+    "valor": 2000.0,
+    "parcelas": 12,
+    "seguro": true
+}
+HTTP/1.1 201 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+{
+    "id": 55,
+    "nome": "Stephanie Kunze",
+    "cpf": "97093236014",
+    "email": "nick.koch@hotmail.com",
+    "valor": 2000.0,
+    "parcelas": 12,
+    "seguro": true
+}
+Request method:	PUT
+Request URI:	http://localhost:8080/api/v1/simulacoes/97093236014
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "97093236014",
+    "nome": "Dr. Vicky Fisher",
+    "email": "nick.koch@hotmail.com",
+    "valor": 2000.0,
+    "parcelas": 20,
+    "seguro": true
+}
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+{
+    "id": 55,
+    "nome": "Dr. Vicky Fisher",
+    "cpf": "97093236014",
+    "email": "nick.koch@hotmail.com",
+    "valor": 2000.00,
+    "parcelas": 20,
+    "seguro": true
+}
+Request method:	PUT
+Request URI:	http://localhost:8080/api/v1/simulacoes/97093236014
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "97093236014",
+    "nome": "Dr. Vicky Fisher",
+    "email": "emailErradoTeste",
+    "valor": 2000.0,
+    "parcelas": 1,
+    "seguro": true
+}
+HTTP/1.1 400 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+Connection: close
+
+{
+    "erros": {
+        "parcelas": "Parcelas deve ser igual ou maior que 2",
+        "email": "must be a well-formed email address"
+    }
+}
+Request method:	PUT
+Request URI:	http://localhost:8080/api/v1/simulacoes/05123151591
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "05123151591",
+    "nome": "Terry Block",
+    "email": "kiesha.padberg@gmail.com",
+    "valor": 200.0,
+    "parcelas": 12,
+    "seguro": false
+}
+HTTP/1.1 404 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+{
+    "mensagem": "CPF 05123151591 não encontrado"
+}
 Request method:	GET
 Request URI:	http://localhost:8080/api/v1/simulacoes
 Proxy:			<none>
@@ -13,11 +206,233 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 03:57:08 GMT
+Date: Thu, 03 Nov 2022 04:29:21 GMT
 
 [
-    
+    {
+        "id": 53,
+        "nome": "Valrie Bernier",
+        "cpf": "01452787603",
+        "email": "rory.sawayn@hotmail.com",
+        "valor": 1000.00,
+        "parcelas": 10,
+        "seguro": true
+    },
+    {
+        "id": 55,
+        "nome": "Dr. Vicky Fisher",
+        "cpf": "97093236014",
+        "email": "nick.koch@hotmail.com",
+        "valor": 2000.00,
+        "parcelas": 20,
+        "seguro": true
+    }
 ]
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+[
+    {
+        "id": 53,
+        "nome": "Valrie Bernier",
+        "cpf": "01452787603",
+        "email": "rory.sawayn@hotmail.com",
+        "valor": 1000.00,
+        "parcelas": 10,
+        "seguro": true
+    },
+    {
+        "id": 55,
+        "nome": "Dr. Vicky Fisher",
+        "cpf": "97093236014",
+        "email": "nick.koch@hotmail.com",
+        "valor": 2000.00,
+        "parcelas": 20,
+        "seguro": true
+    }
+]
+Request method:	DELETE
+Request URI:	http://localhost:8080/api/v1/simulacoes/53
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 2
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+OK
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+[
+    {
+        "id": 55,
+        "nome": "Dr. Vicky Fisher",
+        "cpf": "97093236014",
+        "email": "nick.koch@hotmail.com",
+        "valor": 2000.00,
+        "parcelas": 20,
+        "seguro": true
+    }
+]
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes/05123151591
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 404 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+{
+    "mensagem": "CPF 05123151591 não encontrado"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes/58063164083
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 404 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+{
+    "mensagem": "CPF 58063164083 não encontrado"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes/58063164083
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 404 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+{
+    "mensagem": "CPF 58063164083 não encontrado"
+}
+Request method:	DELETE
+Request URI:	http://localhost:8080/api/v1/simulacoes/null
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 400 
+Content-Length: 0
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+Connection: close
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+[
+    {
+        "id": 55,
+        "nome": "Dr. Vicky Fisher",
+        "cpf": "97093236014",
+        "email": "nick.koch@hotmail.com",
+        "valor": 2000.00,
+        "parcelas": 20,
+        "seguro": true
+    }
+]
+Request method:	DELETE
+Request URI:	http://localhost:8080/api/v1/simulacoes/55
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 2
+Date: Thu, 03 Nov 2022 04:29:21 GMT
+
+OK
 Request method:	DELETE
 Request URI:	http://localhost:8080/api/v1/simulacoes/999
 Proxy:			<none>
@@ -33,6 +448,6 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: text/plain;charset=UTF-8
 Content-Length: 2
-Date: Thu, 03 Nov 2022 03:57:08 GMT
+Date: Thu, 03 Nov 2022 04:29:21 GMT
 
 OK
