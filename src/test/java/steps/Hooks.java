@@ -30,7 +30,7 @@ public class Hooks extends Utils {
         }
     }
 
-    @Before("@TryGetAllSimulations, @TryDeleteSimulation")
+    @Before("@TryDeleteSimulation")
     public void deleteAllSimulations() throws IOException {
         RequestSpecification res = given()
                 .spec(requestSpecification("GET"));
@@ -55,10 +55,37 @@ public class Hooks extends Utils {
                 }
 
             }
-
-
         }
-
     }
-}
+
+    @Before("@TryGetAllSimulations")
+    public void deleteAllRegisters() throws IOException {
+
+            RequestSpecification res = given()
+                    .spec(requestSpecification("GET"));
+            ResponseSpecification resspec = new ResponseSpecBuilder()
+                    .expectStatusCode(204)
+                    .expectContentType(ContentType.JSON)
+                    .build();
+            Response response = res.when()
+                    .get(APIResources.getAllSimulationsAPI.getResource());
+
+            boolean flag = true;
+            List<Integer> ids = JsonPath.from(response.asString()).get("id");
+            int count = ids.size();
+            while (count > -1 && flag == true) {
+                while (count > 0 ) {
+                    for(int i = 0; i <= ids.size() -1; i++) {
+                        res.when()
+                                .delete(APIResources.deleteSimulationAPI.getResource() + ids.get(i));
+                        count--;
+                    }
+                }
+                if(count <= 0) {
+                    flag = false;
+                }
+            }
+        }
+    }
+
 

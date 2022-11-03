@@ -27,8 +27,6 @@ Runners para execução dos cenários
 
 Arquivos Cucumber com os cenários
 
-![](![img.png](img.png))
-
 
 Tags para execução dos cenários de Restrição
 
@@ -157,3 +155,31 @@ Nesse caso o CN esta com status PASSED.
 ![](src/test/resources/img/img_24.png)
 ![](src/test/resources/img/img_25.png)
 ![](src/test/resources/img/img_26.png)
+
+
+### CN - @TryGetAllSimulations
+
+* Ao tentar buscar todas as simulacoes, quando nao existe simulacao cadastrada retorna status 200.
+
+* Criterios de aceite
+
+![](src/test/resources/img/img_29.png)
+
+* Execucao : CN FAILED 
+* Na documentacao da API nao esta previsto esse comportament, apenas no PDF disponibilizado.
+Nesse caso considero o CN FAILED ao retornar um status code diferente do criterio de aceite.
+
+![](src/test/resources/img/img_30.png)
+![](src/test/resources/img/img_31.png)
+![](src/test/resources/img/img_32.png)
+
+
+# IMPORTANTE 
+
+## Simulacoes
+
+![](src/test/resources/img/img_33.png)
+
+## Restricoes
+
+![](src/test/resources/img/img_34.png)

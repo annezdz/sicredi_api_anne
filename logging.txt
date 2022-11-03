@@ -1,4 +1,18 @@
 Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/47727464392
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 204 
+Date: Thu, 03 Nov 2022 17:29:33 GMT
+Request method:	GET
 Request URI:	http://localhost:8080/api/v1/restricoes/97093236014
 Proxy:			<none>
 Request params:	<none>
@@ -13,7 +27,7 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:33 GMT
 
 {
     "mensagem": "O CPF 97093236014 tem problema"
@@ -33,7 +47,7 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:33 GMT
 
 {
     "mensagem": "O CPF 60094146012 tem problema"
@@ -53,7 +67,7 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:33 GMT
 
 {
     "mensagem": "O CPF 84809766080 tem problema"
@@ -73,7 +87,7 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:33 GMT
 
 {
     "mensagem": "O CPF 62648716050 tem problema"
@@ -93,7 +107,7 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:33 GMT
 
 {
     "mensagem": "O CPF 26276298085 tem problema"
@@ -113,7 +127,7 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:33 GMT
 
 {
     "mensagem": "O CPF 01317496094 tem problema"
@@ -133,7 +147,7 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:33 GMT
 
 {
     "mensagem": "O CPF 55856777050 tem problema"
@@ -153,7 +167,7 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:33 GMT
 
 {
     "mensagem": "O CPF 19626829001 tem problema"
@@ -173,7 +187,7 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:33 GMT
 
 {
     "mensagem": "O CPF 24094592008 tem problema"
@@ -193,10 +207,203 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:33 GMT
 
 {
     "mensagem": "O CPF 58063164083 tem problema"
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "38543540704",
+    "nome": "Bibi Pollich",
+    "email": "pedro.nolan@gmail.com",
+    "valor": 1000.0,
+    "parcelas": 10,
+    "seguro": true
+}
+HTTP/1.1 201 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+
+{
+    "id": 86,
+    "nome": "Bibi Pollich",
+    "cpf": "38543540704",
+    "email": "pedro.nolan@gmail.com",
+    "valor": 1000.0,
+    "parcelas": 10,
+    "seguro": true
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "48026762207",
+    "nome": "Janice Bauch",
+    "email": "brant.haag@hotmail.com",
+    "valor": 1000.0,
+    "parcelas": 1,
+    "seguro": false
+}
+HTTP/1.1 400 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+Connection: close
+
+{
+    "erros": {
+        "parcelas": "Parcelas deve ser igual ou maior que 2"
+    }
+}
+Request method:	POST
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "97093236014",
+    "nome": "Mr. Misha McLaughlin",
+    "email": "drew.murphy@yahoo.com",
+    "valor": 2000.0,
+    "parcelas": 12,
+    "seguro": true
+}
+HTTP/1.1 201 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+
+{
+    "id": 88,
+    "nome": "Mr. Misha McLaughlin",
+    "cpf": "97093236014",
+    "email": "drew.murphy@yahoo.com",
+    "valor": 2000.0,
+    "parcelas": 12,
+    "seguro": true
+}
+Request method:	PUT
+Request URI:	http://localhost:8080/api/v1/simulacoes/97093236014
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "97093236014",
+    "nome": "Steven Kreiger",
+    "email": "drew.murphy@yahoo.com",
+    "valor": 2000.0,
+    "parcelas": 20,
+    "seguro": true
+}
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+
+{
+    "id": 88,
+    "nome": "Steven Kreiger",
+    "cpf": "97093236014",
+    "email": "drew.murphy@yahoo.com",
+    "valor": 2000.00,
+    "parcelas": 20,
+    "seguro": true
+}
+Request method:	PUT
+Request URI:	http://localhost:8080/api/v1/simulacoes/97093236014
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "97093236014",
+    "nome": "Steven Kreiger",
+    "email": "emailErradoTeste",
+    "valor": 2000.0,
+    "parcelas": 1,
+    "seguro": true
+}
+HTTP/1.1 400 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+Connection: close
+
+{
+    "erros": {
+        "parcelas": "Parcelas deve ser igual ou maior que 2",
+        "email": "E-mail deve ser um e-mail válido"
+    }
+}
+Request method:	PUT
+Request URI:	http://localhost:8080/api/v1/simulacoes/38020104186
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "cpf": "38020104186",
+    "nome": "Quentin Sauer",
+    "email": "hollis.jones@yahoo.com",
+    "valor": 200.0,
+    "parcelas": 12,
+    "seguro": false
+}
+HTTP/1.1 404 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+
+{
+    "mensagem": "CPF 38020104186 não encontrado"
 }
 Request method:	GET
 Request URI:	http://localhost:8080/api/v1/simulacoes
@@ -213,75 +420,67 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:34 GMT
 
 [
     {
-        "id": 17,
-        "nome": "Dora Goyette",
-        "cpf": "41241003025",
-        "email": "joan.rau@yahoo.com",
+        "id": 86,
+        "nome": "Bibi Pollich",
+        "cpf": "38543540704",
+        "email": "pedro.nolan@gmail.com",
         "valor": 1000.00,
         "parcelas": 10,
         "seguro": true
     },
     {
-        "id": 22,
-        "nome": "Gloria Hermann II",
-        "cpf": "08147822804",
-        "email": "mckinley.leffler@hotmail.com",
-        "valor": 1000.00,
+        "id": 88,
+        "nome": "Steven Kreiger",
+        "cpf": "97093236014",
+        "email": "drew.murphy@yahoo.com",
+        "valor": 2000.00,
         "parcelas": 20,
         "seguro": true
-    },
+    }
+]
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+
+[
     {
-        "id": 23,
-        "nome": "Ms. Ermelinda Schuppe",
-        "cpf": "11051210542",
-        "email": "garth.lindgren@gmail.com",
+        "id": 86,
+        "nome": "Bibi Pollich",
+        "cpf": "38543540704",
+        "email": "pedro.nolan@gmail.com",
         "valor": 1000.00,
-        "parcelas": 11,
+        "parcelas": 10,
         "seguro": true
     },
     {
-        "id": 24,
-        "nome": "Felix Leffler",
-        "cpf": "76350318480",
-        "email": "hal.sanford@yahoo.com",
-        "valor": 1000.00,
-        "parcelas": 11,
-        "seguro": true
-    },
-    {
-        "id": 25,
-        "nome": "Elliot Wolf",
-        "cpf": "34664558716",
-        "email": "tyrone.mitchell@gmail.com",
-        "valor": 1000.00,
-        "parcelas": 11,
-        "seguro": true
-    },
-    {
-        "id": 26,
-        "nome": "Hubert Koelpin",
-        "cpf": "53054054160",
-        "email": "juana.mcclure@gmail.com",
-        "valor": 1000.00,
-        "parcelas": 11,
-        "seguro": true
-    },
-    {
-        "id": 27,
-        "nome": "teste",
-        "cpf": "58063164083",
-        "email": "jonathan.ratke@yahoo.com",
+        "id": 88,
+        "nome": "Steven Kreiger",
+        "cpf": "97093236014",
+        "email": "drew.murphy@yahoo.com",
         "valor": 2000.00,
-        "parcelas": 12,
+        "parcelas": 20,
         "seguro": true
     }
 ]
 Request method:	DELETE
-Request URI:	http://localhost:8080/api/v1/simulacoes/17
+Request URI:	http://localhost:8080/api/v1/simulacoes/86
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -295,9 +494,143 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: text/plain;charset=UTF-8
 Content-Length: 2
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:34 GMT
 
 OK
+Request method:	DELETE
+Request URI:	http://localhost:8080/api/v1/simulacoes/88
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 2
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+
+OK
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+
+[
+    
+]
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes/38020104186
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 404 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+
+{
+    "mensagem": "CPF 38020104186 não encontrado"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes/58063164083
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 404 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+
+{
+    "mensagem": "CPF 58063164083 não encontrado"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes/58063164083
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 404 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+
+{
+    "mensagem": "CPF 58063164083 não encontrado"
+}
+Request method:	DELETE
+Request URI:	http://localhost:8080/api/v1/simulacoes/null
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 400 
+Content-Length: 0
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+Connection: close
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/simulacoes
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 17:29:34 GMT
+
+[
+    
+]
 Request method:	DELETE
 Request URI:	http://localhost:8080/api/v1/simulacoes/999
 Proxy:			<none>
@@ -313,6 +646,6 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: text/plain;charset=UTF-8
 Content-Length: 2
-Date: Thu, 03 Nov 2022 15:08:57 GMT
+Date: Thu, 03 Nov 2022 17:29:34 GMT
 
 OK
