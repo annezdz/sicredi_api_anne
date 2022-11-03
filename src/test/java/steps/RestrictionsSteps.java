@@ -55,17 +55,9 @@ public class RestrictionsSteps extends Utils {
         Assert.assertEquals(response.getStatusCode(),statusCode);
     }
 
-
-    @Then("{string} in response body is {string}<cpf>{string}")
-    public void in_response_body_is_cpf(String string, String string2, String string3) {
-
-    }
-
-
     @And("{string} in response body is {string}")
     public void messageInResponseBodyIs(String key, String expectedMessage) {
         Assert.assertEquals(getJsonPath(response,key), expectedMessage);
 
     }
-
 }

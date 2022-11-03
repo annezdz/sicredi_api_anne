@@ -76,7 +76,7 @@ Feature: Simulations
     When calls "getSimulationAPI" with "GET BY CPF"
     And get id simulation
     When calls "deleteSimulationAPI" with "DELETE"
-    Then the API Simulation return with status 204
+    Then the API Simulation return with status 200
 
     @TryDeleteSimulation
     Scenario: Try delete a simulation successful

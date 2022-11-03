@@ -1,5 +1,5 @@
-Request method:	POST
-Request URI:	http://localhost:8080/api/v1/simulacoes
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/97093236014
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -9,130 +9,17 @@ Headers:		Accept=*/*
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
-Body:
-{
-    "cpf": "01452787603",
-    "nome": "Valrie Bernier",
-    "email": "rory.sawayn@hotmail.com",
-    "valor": 1000.0,
-    "parcelas": 10,
-    "seguro": true
-}
-HTTP/1.1 201 
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-
-{
-    "id": 53,
-    "nome": "Valrie Bernier",
-    "cpf": "01452787603",
-    "email": "rory.sawayn@hotmail.com",
-    "valor": 1000.0,
-    "parcelas": 10,
-    "seguro": true
-}
-Request method:	POST
-Request URI:	http://localhost:8080/api/v1/simulacoes
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "cpf": "55148357231",
-    "nome": "Clarissa Harber",
-    "email": "andrea.stoltenberg@hotmail.com",
-    "valor": 1000.0,
-    "parcelas": 1,
-    "seguro": false
-}
-HTTP/1.1 400 
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-Connection: close
-
-{
-    "erros": {
-        "parcelas": "Parcelas deve ser igual ou maior que 2"
-    }
-}
-Request method:	POST
-Request URI:	http://localhost:8080/api/v1/simulacoes
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "cpf": "97093236014",
-    "nome": "Stephanie Kunze",
-    "email": "nick.koch@hotmail.com",
-    "valor": 2000.0,
-    "parcelas": 12,
-    "seguro": true
-}
-HTTP/1.1 201 
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-
-{
-    "id": 55,
-    "nome": "Stephanie Kunze",
-    "cpf": "97093236014",
-    "email": "nick.koch@hotmail.com",
-    "valor": 2000.0,
-    "parcelas": 12,
-    "seguro": true
-}
-Request method:	PUT
-Request URI:	http://localhost:8080/api/v1/simulacoes/97093236014
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "cpf": "97093236014",
-    "nome": "Dr. Vicky Fisher",
-    "email": "nick.koch@hotmail.com",
-    "valor": 2000.0,
-    "parcelas": 20,
-    "seguro": true
-}
+Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
+Date: Thu, 03 Nov 2022 15:08:57 GMT
 
 {
-    "id": 55,
-    "nome": "Dr. Vicky Fisher",
-    "cpf": "97093236014",
-    "email": "nick.koch@hotmail.com",
-    "valor": 2000.00,
-    "parcelas": 20,
-    "seguro": true
+    "mensagem": "O CPF 97093236014 tem problema"
 }
-Request method:	PUT
-Request URI:	http://localhost:8080/api/v1/simulacoes/97093236014
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/60094146012
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -142,29 +29,17 @@ Headers:		Accept=*/*
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
-Body:
-{
-    "cpf": "97093236014",
-    "nome": "Dr. Vicky Fisher",
-    "email": "emailErradoTeste",
-    "valor": 2000.0,
-    "parcelas": 1,
-    "seguro": true
-}
-HTTP/1.1 400 
+Body:			<none>
+HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-Connection: close
+Date: Thu, 03 Nov 2022 15:08:57 GMT
 
 {
-    "erros": {
-        "parcelas": "Parcelas deve ser igual ou maior que 2",
-        "email": "must be a well-formed email address"
-    }
+    "mensagem": "O CPF 60094146012 tem problema"
 }
-Request method:	PUT
-Request URI:	http://localhost:8080/api/v1/simulacoes/05123151591
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/84809766080
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -174,22 +49,154 @@ Headers:		Accept=*/*
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
-Body:
-{
-    "cpf": "05123151591",
-    "nome": "Terry Block",
-    "email": "kiesha.padberg@gmail.com",
-    "valor": 200.0,
-    "parcelas": 12,
-    "seguro": false
-}
-HTTP/1.1 404 
+Body:			<none>
+HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
+Date: Thu, 03 Nov 2022 15:08:57 GMT
 
 {
-    "mensagem": "CPF 05123151591 não encontrado"
+    "mensagem": "O CPF 84809766080 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/62648716050
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 15:08:57 GMT
+
+{
+    "mensagem": "O CPF 62648716050 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/26276298085
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 15:08:57 GMT
+
+{
+    "mensagem": "O CPF 26276298085 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/01317496094
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 15:08:57 GMT
+
+{
+    "mensagem": "O CPF 01317496094 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/55856777050
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 15:08:57 GMT
+
+{
+    "mensagem": "O CPF 55856777050 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/19626829001
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 15:08:57 GMT
+
+{
+    "mensagem": "O CPF 19626829001 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/24094592008
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 15:08:57 GMT
+
+{
+    "mensagem": "O CPF 24094592008 tem problema"
+}
+Request method:	GET
+Request URI:	http://localhost:8080/api/v1/restricoes/58063164083
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Thu, 03 Nov 2022 15:08:57 GMT
+
+{
+    "mensagem": "O CPF 58063164083 tem problema"
 }
 Request method:	GET
 Request URI:	http://localhost:8080/api/v1/simulacoes
@@ -206,67 +213,75 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
+Date: Thu, 03 Nov 2022 15:08:57 GMT
 
 [
     {
-        "id": 53,
-        "nome": "Valrie Bernier",
-        "cpf": "01452787603",
-        "email": "rory.sawayn@hotmail.com",
+        "id": 17,
+        "nome": "Dora Goyette",
+        "cpf": "41241003025",
+        "email": "joan.rau@yahoo.com",
         "valor": 1000.00,
         "parcelas": 10,
         "seguro": true
     },
     {
-        "id": 55,
-        "nome": "Dr. Vicky Fisher",
-        "cpf": "97093236014",
-        "email": "nick.koch@hotmail.com",
-        "valor": 2000.00,
-        "parcelas": 20,
-        "seguro": true
-    }
-]
-Request method:	GET
-Request URI:	http://localhost:8080/api/v1/simulacoes
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 200 
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-
-[
-    {
-        "id": 53,
-        "nome": "Valrie Bernier",
-        "cpf": "01452787603",
-        "email": "rory.sawayn@hotmail.com",
+        "id": 22,
+        "nome": "Gloria Hermann II",
+        "cpf": "08147822804",
+        "email": "mckinley.leffler@hotmail.com",
         "valor": 1000.00,
-        "parcelas": 10,
+        "parcelas": 20,
         "seguro": true
     },
     {
-        "id": 55,
-        "nome": "Dr. Vicky Fisher",
-        "cpf": "97093236014",
-        "email": "nick.koch@hotmail.com",
+        "id": 23,
+        "nome": "Ms. Ermelinda Schuppe",
+        "cpf": "11051210542",
+        "email": "garth.lindgren@gmail.com",
+        "valor": 1000.00,
+        "parcelas": 11,
+        "seguro": true
+    },
+    {
+        "id": 24,
+        "nome": "Felix Leffler",
+        "cpf": "76350318480",
+        "email": "hal.sanford@yahoo.com",
+        "valor": 1000.00,
+        "parcelas": 11,
+        "seguro": true
+    },
+    {
+        "id": 25,
+        "nome": "Elliot Wolf",
+        "cpf": "34664558716",
+        "email": "tyrone.mitchell@gmail.com",
+        "valor": 1000.00,
+        "parcelas": 11,
+        "seguro": true
+    },
+    {
+        "id": 26,
+        "nome": "Hubert Koelpin",
+        "cpf": "53054054160",
+        "email": "juana.mcclure@gmail.com",
+        "valor": 1000.00,
+        "parcelas": 11,
+        "seguro": true
+    },
+    {
+        "id": 27,
+        "nome": "teste",
+        "cpf": "58063164083",
+        "email": "jonathan.ratke@yahoo.com",
         "valor": 2000.00,
-        "parcelas": 20,
+        "parcelas": 12,
         "seguro": true
     }
 ]
 Request method:	DELETE
-Request URI:	http://localhost:8080/api/v1/simulacoes/53
+Request URI:	http://localhost:8080/api/v1/simulacoes/17
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -280,157 +295,7 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: text/plain;charset=UTF-8
 Content-Length: 2
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-
-OK
-Request method:	GET
-Request URI:	http://localhost:8080/api/v1/simulacoes
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 200 
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-
-[
-    {
-        "id": 55,
-        "nome": "Dr. Vicky Fisher",
-        "cpf": "97093236014",
-        "email": "nick.koch@hotmail.com",
-        "valor": 2000.00,
-        "parcelas": 20,
-        "seguro": true
-    }
-]
-Request method:	GET
-Request URI:	http://localhost:8080/api/v1/simulacoes/05123151591
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 404 
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-
-{
-    "mensagem": "CPF 05123151591 não encontrado"
-}
-Request method:	GET
-Request URI:	http://localhost:8080/api/v1/simulacoes/58063164083
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 404 
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-
-{
-    "mensagem": "CPF 58063164083 não encontrado"
-}
-Request method:	GET
-Request URI:	http://localhost:8080/api/v1/simulacoes/58063164083
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 404 
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-
-{
-    "mensagem": "CPF 58063164083 não encontrado"
-}
-Request method:	DELETE
-Request URI:	http://localhost:8080/api/v1/simulacoes/null
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 400 
-Content-Length: 0
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-Connection: close
-Request method:	GET
-Request URI:	http://localhost:8080/api/v1/simulacoes
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 200 
-Content-Type: application/json;charset=UTF-8
-Transfer-Encoding: chunked
-Date: Thu, 03 Nov 2022 04:29:21 GMT
-
-[
-    {
-        "id": 55,
-        "nome": "Dr. Vicky Fisher",
-        "cpf": "97093236014",
-        "email": "nick.koch@hotmail.com",
-        "valor": 2000.00,
-        "parcelas": 20,
-        "seguro": true
-    }
-]
-Request method:	DELETE
-Request URI:	http://localhost:8080/api/v1/simulacoes/55
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:			<none>
-HTTP/1.1 200 
-Content-Type: text/plain;charset=UTF-8
-Content-Length: 2
-Date: Thu, 03 Nov 2022 04:29:21 GMT
+Date: Thu, 03 Nov 2022 15:08:57 GMT
 
 OK
 Request method:	DELETE
@@ -448,6 +313,6 @@ Body:			<none>
 HTTP/1.1 200 
 Content-Type: text/plain;charset=UTF-8
 Content-Length: 2
-Date: Thu, 03 Nov 2022 04:29:21 GMT
+Date: Thu, 03 Nov 2022 15:08:57 GMT
 
 OK

@@ -5,15 +5,13 @@ Feature: Check restrictions by CPF
     Given a "<cpf>" to be checked with "getRestrictionAPI" http request
     When calls "getRestrictionAPI" with "GET" http request
     Then the API call got success with status 204
-#    And "mensagem" in response body is "Não possui restrição"
-
 
     @WithRestriction
     Scenario Outline: o: Check CPF with restriction
       Given a "<cpf>" to be checked with "getRestrictionAPI" http request
       When calls "getRestrictionAPI" with "GET" http request
       Then the API call got success with status 200
-      And "mensagem" in response body is "O CPF <cpf> tem problema"
+      And "mensagem" in response body is "O CPF <cpf> possui restrição"
       Examples:
       | cpf |
       | 97093236014 |

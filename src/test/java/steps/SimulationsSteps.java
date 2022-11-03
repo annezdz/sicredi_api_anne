@@ -1,15 +1,10 @@
 package steps;
 
-import cucumber.api.java.it.Ma;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
@@ -23,7 +18,8 @@ import resources.APIResources;
 import resources.TestDataBuild;
 import resources.Utils;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -35,11 +31,10 @@ public class SimulationsSteps extends Utils {
     protected RequestSpecification res;
     protected ResponseSpecification resspec;
     protected Response response;
-
     protected static Integer id;
     static Simulation duplicatedCPF;
-
     protected static int statusCodeReturned;
+
     @Given("I create a new simulation with {string} {string} {string} with {string} verb")
     public void iCreateANewSimulationWith(String instalments, String value, String insurance, String http)  throws IOException {
        duplicatedCPF = TestDataBuild.addSimulation(Double.parseDouble(value),Integer.parseInt(instalments),Boolean.parseBoolean(insurance));
@@ -78,7 +73,7 @@ public class SimulationsSteps extends Utils {
 
     @Then("the API Simulation return with status {int}")
     public void theAPISimulationCallGotSuccessWithStatus(int statusCodeExpected) {
-        Assert.assertEquals(response.getStatusCode(),statusCodeExpected);
+        Assert.assertEquals(statusCodeExpected, response.getStatusCode());
     }
 
     @And("returned the list with errors")
@@ -89,7 +84,6 @@ public class SimulationsSteps extends Utils {
 
     @Given("I insert a existent CPF with {string} {string} {string} with {string} verb")
     public void iInsertAExistentCPFWithWithVerb(String instalments, String value, String insurance, String http) throws IOException {
-
         duplicatedCPF = TestDataBuild.addSimulation(Double.parseDouble(value),Integer.parseInt(instalments),Boolean.parseBoolean(insurance));
         duplicatedCPF.setCpf("97093236014");
         res = given()
@@ -101,7 +95,7 @@ public class SimulationsSteps extends Utils {
     public void returnedThe(String message, String http) {
         if(http.equalsIgnoreCase("POST")) {
             response.then()
-                    .body("mensagem",Matchers.equalTo("CPF duplicado"));
+                    .body("mensagem",Matchers.equalTo("CPF já existente"));
         } else if(http.equalsIgnoreCase("PUT") || http.equalsIgnoreCase("GET")) {
             response.then()
                     .body("mensagem",Matchers.equalTo("CPF " + duplicatedCPF.getCpf() +" não encontrado"));
@@ -122,15 +116,12 @@ public class SimulationsSteps extends Utils {
         if(duplicatedCPF.getCpf() == null) {
             duplicatedCPF = TestDataBuild.addSimulation(Double.parseDouble(value),Integer.parseInt(instalments),Boolean.parseBoolean(insurance));
             duplicatedCPF.setCpf("97093236014");
-
         } else  if(action.equalsIgnoreCase("modified with error")){
             duplicatedCPF.setParcelas(Integer.valueOf(instalments));
-
             duplicatedCPF.setEmail("emailErradoTeste");
         } else if(action.equalsIgnoreCase("modified")) {
             duplicatedCPF.setNome(generateFakerName());
             duplicatedCPF.setParcelas(Integer.valueOf(instalments));
-
         } else if(action.equalsIgnoreCase("without")) {
             duplicatedCPF.setCpf(generateValidCPF());
         } else {
@@ -151,7 +142,6 @@ public class SimulationsSteps extends Utils {
 
     @When("calls {string} with {string} verb and then get all registers")
     public void callsWithVerbAndGetAllRegisters(String resource, String http) throws IOException {
-
         res = given()
                 .spec(requestSpecification(resource));
         APIResources resourceAPI = APIResources.valueOf(resource);
@@ -239,7 +229,6 @@ public class SimulationsSteps extends Utils {
     public void iSearchACPFWithoutSimulation() {
         if(duplicatedCPF.getCpf() !=  null) {
             duplicatedCPF.setCpf("58063164083");
-
         }
     }
 

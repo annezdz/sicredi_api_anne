@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/features/simulations.feature",
         plugin ="json:target/jsonReports/cucumber-report.json",
-//        tags = "@TryDeleteSimulation",
+        tags = "@TryDeleteSimulation",
         glue= {"steps"})
 public class TestRunnerSimulations {
 }
