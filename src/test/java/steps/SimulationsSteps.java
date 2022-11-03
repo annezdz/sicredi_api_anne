@@ -1,13 +1,18 @@
 package steps;
 
+import cucumber.api.java.it.Ma;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
@@ -18,8 +23,10 @@ import resources.APIResources;
 import resources.TestDataBuild;
 import resources.Utils;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
@@ -30,8 +37,6 @@ public class SimulationsSteps extends Utils {
     protected Response response;
 
     static Simulation duplicatedCPF;
-
-//    static TestDataBuild teste ;
 
     protected static int statusCodeReturned;
     @Given("I create a new simulation with {string} {string} {string} with {string} verb")
@@ -59,7 +64,6 @@ public class SimulationsSteps extends Utils {
                 .expectStatusCode(201)
                 .expectContentType(ContentType.JSON)
                 .build();
-
         if(http.equalsIgnoreCase("POST")) {
             response = res.when()
                     .post(resourceAPI.getResource());
@@ -142,6 +146,87 @@ public class SimulationsSteps extends Utils {
         res = given()
                 .spec(requestSpecification("PUT"))
                 .body(duplicatedCPF);
+    }
+
+    @When("calls {string} with {string} verb and then get all registers")
+    public void callsWithVerbAndGetAllRegisters(String resource, String http) throws IOException {
+
+        res = given()
+                .spec(requestSpecification(resource));
+        APIResources resourceAPI = APIResources.valueOf(resource);
+        resspec = new ResponseSpecBuilder()
+                .expectStatusCode(204)
+                .expectContentType(ContentType.JSON)
+                .build();
+
+        if(http.equalsIgnoreCase("GET ALL")) {
+            response = res.when()
+                    .get(resourceAPI.getResource());
+        }
+    }
+
+    @When("calls {string} with {string} and {string}")
+    public void callsWithAnd(String resource, String http, String cpf) {
+        APIResources resourceAPI = APIResources.valueOf(resource);
+        resspec = new ResponseSpecBuilder()
+                .expectStatusCode(201)
+                .expectContentType(ContentType.JSON)
+                .build();
+        if(http.equalsIgnoreCase("GET")) {
+            response = res.when()
+                    .get(resourceAPI.getResource() + duplicatedCPF.getCpf());
+        }
+
+    }
+
+    @When("calls {string} with {string}")
+    public void callsWith(String resource, String verb) throws IOException {
+
+        res = given()
+                .spec(requestSpecification(resource));
+        APIResources resourceAPI = APIResources.valueOf(resource);
+        resspec = new ResponseSpecBuilder()
+                .expectStatusCode(204)
+                .expectContentType(ContentType.JSON)
+                .build();
+
+        if (verb.equalsIgnoreCase("GET BY CPF")) {
+            response = res.when()
+                    .get(resourceAPI.getResource() + duplicatedCPF.getCpf());
+        }
+    }
+
+    @Then("returned status {int} because lis is empty")
+    public void returnedStatusBecauseLisIsEmpty(int status) {
+        List<String> list = Collections.singletonList(response.asString());
+        List<Map<String, String>> simulations = JsonPath.from(response.asString()).get();
+        Assert.assertTrue(simulations.size() == 0);
+        Assert.assertEquals(response.getStatusCode(), status);
+    }
+
+    @Then("search all simulations")
+    public void searchAllSimulations() throws IOException {
+        List<Map<String, String>> simulations = JsonPath.from(response.asString()).get();
+        Assert.assertTrue(simulations.size() > 0);
+        int size = simulations.size();
+        response.then().assertThat().body("size()", Matchers.is(size));
+    }
+
+    @Given("I search a CPF")
+    public void iSearchACPF() {
+        if(duplicatedCPF.getCpf() == null) {
+            duplicatedCPF = TestDataBuild.addSimulation(899.00,50, false);
+            duplicatedCPF.setCpf("97093236014");
+        }
+    }
+
+    @And("validate Schema")
+    public void validateSchema() {
+        Assert.assertFalse(getBody(response).isEmpty());
+        response
+                .then()
+                .assertThat()
+                .body(JsonSchemaValidator.matchesJsonSchema(new File("src/test/java/resources/schema.json")));
     }
 }
 

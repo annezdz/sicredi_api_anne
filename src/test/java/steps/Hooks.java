@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Hooks {
 
-    @Before("@PutSimulation, @PutSimulationWithError")
+    @Before("@PutSimulation, @PutSimulationWithError,@GetByCPF")
     public void beforeScenario() throws IOException {
 
         SimulationsSteps newSimulation =new SimulationsSteps();
@@ -15,5 +15,10 @@ public class Hooks {
             newSimulation.iCreateANewSimulationWith("11", "1000.00", "true","POST");
             newSimulation.callsWithVerb("postSimulationAPI", "POST");
         }
+    }
+
+    @Before("@TryGetAllSimulations")
+    public void deleteAllSimulations() {
+
     }
 }

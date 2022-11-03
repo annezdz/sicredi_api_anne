@@ -23,7 +23,6 @@ public abstract class Utils {
         if(req==null)
         {
             PrintStream log =new PrintStream(new FileOutputStream("logging.txt"));
-//            APIResources resourceAPI = APIResources.valueOf(resource);
             req = new RequestSpecBuilder().setBaseUri(getGlobalValue("baseUrl"))
                     .addFilter(RequestLoggingFilter.logRequestTo(log))
                     .addFilter(ResponseLoggingFilter.logResponseTo(log))
@@ -49,7 +48,6 @@ public abstract class Utils {
     public String getBody(Response response) {
         String resp = response.asString();
         JsonPath js = new JsonPath(resp);
-        System.out.println(js.get().toString());
         return js.get().toString();
     }
 

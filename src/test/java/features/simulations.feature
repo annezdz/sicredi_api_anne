@@ -38,13 +38,30 @@ Feature: Simulations
     And returned the list with errors
 
 
-    @PutWithoutSimulation
-    Scenario: try modified a inexistent simulation
-      Given I insert a CPF without simulation
-      When calls "putSimulationAPI" with "PUT" verb
-      Then the API Simulation return with status 404
-      And returned the "mensagem" "PUT"
+  @PutWithoutSimulation
+  Scenario: try modified a inexistent simulation
+    Given I insert a CPF without simulation
+    When calls "putSimulationAPI" with "PUT" verb
+    Then the API Simulation return with status 404
+    And returned the "mensagem" "PUT"
 
+  @GetAllSimulations
+  Scenario: get all simulations
+    When calls "getAllSimulationsAPI" with "GET ALL" verb and then get all registers
+    Then search all simulations
+
+
+  @TryGetAllSimulations
+  Scenario: try get all simulations
+    When calls "getAllSimulationsAPI" with "GET ALL" verb and then get all registers
+    Then returned status 204 because lis is empty
+
+  @GetByCPF
+  Scenario: Get a simulation by CPF
+    Given I search a CPF
+    When calls "getSimulationAPI" with "GET BY CPF"
+    Then the API Simulation return with status 200
+    And validate Schema
 
 
 
